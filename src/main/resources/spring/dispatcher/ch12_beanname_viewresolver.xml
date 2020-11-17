@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- view이름을 객체로 연결(매핑)시켜주는 객체 => 객체를 찾음-->
+	<bean id="viewResolver2" class="org.springframework.web.servlet.view.BeanNameViewResolver">
+	<!-- class를 객체로 만들어서 관리할때 id이름으로 관리하라는 뜻=> 이때 객체의 이름은 클래스의 첫자가 소문자인 이름으로 생성하여 관리 -->
+		<property name="order" value="0"/><!-- 컨트롤러가 리턴하는 뷰 이름을 누가 먼저 해석할지 순서를 정함. value가 0 인걸 먼저 해석 -->
+		
+	</bean>
+
+</beans>

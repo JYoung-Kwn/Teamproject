@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.mapper.member">
+
+	<insert id="insert" parameterType="member">
+		insert into member (mid, mname, mpassword, menabled, mrole)
+		values(#{mid}, #{mname}, #{mpassword}, #{menabled}, #{mrole})
+	</insert>
+
+	<select id="selectByMid" parameterType="string" resultType="member"> <!-- parameterType에 리턴타입 명시 그리고 mapper-config에서 resulttype에 별칭넣어줌 -->
+		select mid, mname, mpassword, menabled, mrole from member where mid=#{mid} <!-- parameterType의 string값이 mid로 들어옴 -->
+		<!-- mid, mname, mpassword, menabled, mrole 는 *로 표현 가능하지만 내가 뭘 가져오는지 모르니깐 명시함. -->
+		
+	</select>
+</mapper>
